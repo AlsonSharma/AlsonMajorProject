@@ -1,5 +1,10 @@
 const express = require("express");
 const router = express.Router();
+// Redirect root URL to /listings
+router.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
 const User = require("../models/user.js");
 const wrapAsync = require("../utils/wrapAsync");
 const passport = require("passport");
